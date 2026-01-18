@@ -1,0 +1,157 @@
+[
+  {
+    "Adventure_Title": "Sundarbans Eco-Tourism (Various Spots)",
+    "Image": "https://i.ibb.co.com/Q7tKjgvX/Sundarbans-Eco-Tourism.jpg",
+    "ID": "eco001",
+    "Category_Name": "Mangrove Forest Eco Adventure",
+    "Short_Description": "Explore the largest mangrove forest in the world with wildlife sightings, boating, birdwatching and guided eco-safaris.",
+    "Adventure_Cost": "BDT 5,000+ per person (boat tour varies by operator)",
+    "Booking_Availability": "Online via Bangladesh Forest Department Sundarbans portal / local tour operators",
+    "Location": "Sundarbans, Khulna & Bagerhat Districts, Bangladesh",
+    "Duration": "1–3 days",
+    "Adventure Level": "Medium",
+    "Included Items": [
+      "Boat ride",
+      "Guide",
+      "Safety gear (life jackets)",
+      "Forest entry permits"
+    ],
+    "Eco_Friendly_Features": [
+      "Wildlife conservation zone",
+      "Mangrove protection",
+      "Low-impact boat tours"
+    ],
+    "Max_Group_Size": "≈ 20–30 per boat",
+    "Special Instructions": [
+      "Carry valid ID for forest permit",
+      "Respect wildlife and stay with guide",
+      "Bring sun protection"
+    ]
+  },
+  {
+    "Adventure_Title": "Ratargul Swamp Forest Tour",
+    "Image": "https://i.ibb.co.com/svTzv34J/Ratargul-Swamp-Forest-with-boat.webp",
+    "ID": "eco002",
+    "Category_Name": "Swamp Forest Eco Adventure",
+    "Short_Description": "Visit one of the largest freshwater swamp forests in the world with boat rides through water-filled forest channels.",
+    "Adventure_Cost": "BDT 1,000–2,000 (boat hire + entry)",
+    "Booking_Availability": "Local booking via Sylhet tour operators",
+    "Location": "Gowainghat, Sylhet District, Bangladesh",
+    "Duration": "Half-day to full-day",
+    "Adventure Level": "Easy to Medium",
+    "Included Items": [
+      "Local boat ride",
+      "Guide",
+      "Forest entry"
+    ],
+    "Eco_Friendly_Features": [
+      "Protected freshwater swamp ecosystem",
+      "Biodiversity preservation"
+    ],
+    "Max_Group_Size": "≈ 6–10 per boat",
+    "Special_Instructions": [
+      "Best visited in monsoon for deeper water experience",
+      "Respect local wildlife habitat"
+    ]
+  },
+  {
+    "Adventure_Title": "Sitakunda Botanical Garden & Eco-Park",
+    "Image": "https://i.ibb.co.com/d0vhs6bH/images.jpg",
+    "ID": "eco003",
+    "Category_Name": "Eco-Park & Nature",
+    "Short_Description": "First eco-park of Bangladesh with waterfalls, diverse flora & fauna, and scenic trails in Chandranath Hills.",
+    "Adventure_Cost": "BDT 50–200 (entry fee approx.)",
+    "Booking_Availability": "On-site entry",
+    "Location": "Sitakunda Upazila, Chittagong District",
+    "Duration": "Half-day",
+    "Adventure_Level": "Easy",
+    "Included_Items": [
+      "Park entry",
+      "Nature trails"
+    ],
+    "Eco_Friendly_Features": [
+      "Large forest preservation area",
+      "Wildlife habitat protection"
+    ],
+    "Max_Group_Size": "Open park",
+    "Special_Instructions": [
+      "Wear comfortable shoes for trails",
+      "Carry water and sun protection"
+    ]
+  },
+  {
+    "Adventure_Title": "Satchari National Park Adventure",
+    "Image": "https://i.ibb.co.com/pj7R7cw9/Satchari-National-Park-Habiganj-Sylhet.jpg",
+    "ID": "eco004",
+    "Category_Name": "National Park Eco Adventure",
+    "Short_Description": "Hill and forest trails with streams, wildlife watching, and nature hikes in Sylhet region.",
+    "Adventure_Cost": "Approx. BDT 100–500 (park entry)",
+    "Booking_Availability": "On-site or via local guides",
+    "Location": "Habiganj District, Sylhet Division",
+    "Duration": "Full-day",
+    "Adventure_Level": "Medium",
+    "Included_Items": [
+      "Guide",
+      "Trail access"
+    ],
+    "Eco_Friendly_Features": [
+      "Forest conservation area",
+      "Wildlife protection"
+    ],
+    "Max_Group_Size": "Varies by trail group",
+    "Special_Instructions": [
+      "Wear hiking gear",
+      "Carry water and insect repellent"
+    ]
+  },
+  {
+    "Adventure_Title": "Mayung Kopal Trek (Khagrachari)",
+    "Image": "https://i.ibb.co.com/T3bT9px/mayung-kopal.jpg",
+    "ID": "eco005",
+    "Category_Name": "Hill Trek Adventure",
+    "Short_Description": "Steep climb to Mayung Kopal hill with scenic views and cultural experience with indigenous Tripuri communities.",
+    "Adventure_Cost": "BDT 300–800 (guide/transport varies)",
+    "Booking_Availability": "Local trekking guides",
+    "Location": "Perachara Union, Khagrachari District",
+    "Duration": "Half-day to full-day trek",
+    "Adventure_Level": "Medium-Hard",
+    "Included_Items": [
+      "Local guide",
+      "Trail trekking"
+    ],
+    "Eco_Friendly_Features": [
+      "Supports local community tourism",
+      "Low-impact trekking"
+    ],
+    "Max_Group_Size": "≈ 8–12",
+    "Special_Instructions": [
+      "Trek with a guide",
+      "Carry sufficient water"
+    ]
+  },
+  {
+    "Adventure_Title": "Teknaf Wildlife Sanctuary Eco Adventure",
+    "Image": "https://i.ibb.co.com/27Dwc3QZ/images-1.jpg",
+    "ID": "eco006",
+    "Category_Name": "Wildlife Sanctuary Eco Adventure",
+    "Short_Description": "Explore coastal hill forests rich in biodiversity, with nature walks, wildlife spotting and cultural tours.",
+    "Adventure_Cost": "BDT 200–600 (entrance + guide)",
+    "Booking_Availability": "On-site / tour operator booking",
+    "Location": "Teknaf, Cox's Bazar District",
+    "Duration": "Full-day",
+    "Adventure_Level": "Medium",
+    "Included_Items": [
+      "Guide",
+      "Forest trail access"
+    ],
+    "Eco_Friendly_Features": [
+      "Protected wildlife habitat",
+      "Conservation zone"
+    ],
+    "Max_Group_Size": "≈ 10–15",
+    "Special_Instructions": [
+      "Wear comfortable footwear",
+      "Respect wildlife distances"
+    ]
+  }
+]
