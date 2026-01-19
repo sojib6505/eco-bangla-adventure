@@ -6,15 +6,20 @@ import { createBrowserRouter, RouterProvider } from 'react-router'
 import Home from './Pages/Home.jsx'
 import Adventure from './Components/Adventure.jsx'
 import ContextProvider from './Context/ContextProvider.jsx'
+import AdventureDetail from './Pages/AdventureDetail.jsx'
 
 const router = createBrowserRouter([
   {path:'/',Component: Home,
     children:([
       {index:true,
-        loader:()=>fetch('eco-adventure.json'),
         Component:Adventure}
     ])
-  }
+  },
+  {path:`adventure_detail/:id`,
+    loader:({params}) => {
+      return params.id
+    },
+    Component:AdventureDetail}
 ])
 
 createRoot(document.getElementById('root')).render(

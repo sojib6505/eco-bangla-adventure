@@ -16,7 +16,7 @@ export default function Navbar() {
         <div className="hidden md:flex gap-10 font-bold text-white">
           <NavLink to="/">Home</NavLink>
           <a href="#adventures">Adventures</a>
-          <NavLink to="/eco">Eco Tourism</NavLink>
+          {/* <NavLink to="/eco">Eco Tourism</NavLink> */}
           <NavLink to="/login">Login</NavLink>
         </div>
 
@@ -34,7 +34,7 @@ export default function Navbar() {
         <div className="md:hidden flex flex-col gap-4 pb-4 font-bold text-white">
           <NavLink  to="/">Home</NavLink>
           <a href="#adventures">Adventures</a>
-          <NavLink  to="/eco">Eco Tourism</NavLink>
+          {/* <NavLink  to="/eco">Eco Tourism</NavLink> */}
           <NavLink  to="/login">Login</NavLink>
         </div>
       )}

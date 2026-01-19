@@ -8,7 +8,14 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 
 export default function Banner() {
-  const { adventure } = useContext(Context);
+  const { adventure,loading } = useContext(Context);
+    if (loading) {
+    return (
+      <div className="w-full py-20 flex justify-center items-center">
+        <h2 className="text-xl font-semibold">Loading adventures...</h2>
+      </div>
+    );
+  }
 
   if (!adventure?.length) return null;
 
@@ -53,7 +60,8 @@ export default function Banner() {
       }}
       className="w-full py-6 md:py-10"
     >
-      {adventure.map(item => (
+      {
+        adventure.map(item => (
         <SwiperSlide key={item.id} className="flex justify-center md:mt-10 md:mb-10">
           
           <div className="relative w-full sm:w-[85%] lg:w-[80%] h-65 sm:h-80 md:h-95 lg:h-105 md:rounded-2xl overflow-hidden shadow-xl">
@@ -74,7 +82,8 @@ export default function Banner() {
 
           </div>
         </SwiperSlide>
-      ))}
+      ))
+      }
     </Swiper>
   );
 }

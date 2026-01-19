@@ -3,18 +3,25 @@ import { Context } from "./Context"
 
 export default function ContextProvider({ children }) {
     const [adventure, setAdventure] = useState([]);
+    const [loading,setLoading] = useState(true)
     useEffect(() => {
-        fetch('eco-adventure.json')
+        fetch('/eco-adventure.json')
             .then(res => res.json())
-            .then(data =>
-                setAdventure(data)
+            .then(data =>{
+                 setAdventure(data);
+                setLoading(false)
+            }
             )
-            .catch(err => 
+            .catch(err => {
                 console.log(err)
+                setLoading(false)
+            }
+                
             )
     }, [])
     const contextValue = {
-        adventure
+        adventure,
+        loading
     }
 
 

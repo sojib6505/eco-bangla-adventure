@@ -30,12 +30,12 @@ export default function WelcomeBanner() {
             Step into Bangladesh, feel her warmth, embrace her wonders, and create your own map of discovery.
           </p>
 
-          <motion.button
+          <motion.a href="#adventures"
             className="btn btn-primary transition-all duration-300 hover:scale-105 hover:shadow-lg"
             whileHover={{ scale: 1.05 }}
           >
             Explore Adventures
-          </motion.button>
+          </motion.a>
         </motion.div>
 
         {/* Right Side: YouTube Video */}

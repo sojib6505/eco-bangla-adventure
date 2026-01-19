@@ -1,9 +1,10 @@
 import { MdOutlineFeaturedPlayList } from "react-icons/md"
 import { motion } from "framer-motion";
+import { Link } from "react-router";
 
 
 export default function AdventureCard({ adventure }) {
-    const { Adventure_Title, Image, Eco_Friendly_Features, } = adventure
+    const {ID, Adventure_Title, Image, Eco_Friendly_Features, } = adventure
     return (
 
         <motion.div
@@ -21,7 +22,7 @@ export default function AdventureCard({ adventure }) {
                 />
                </div>
                 <div>
-                    <h1 className="text-2xl font-bold">{Adventure_Title}</h1>
+                    <h1 className="text-xl font-bold">{Adventure_Title}</h1>
                      <div className="py-2">
                         
                        <div className="flex gap-2 items-center">
@@ -35,7 +36,7 @@ export default function AdventureCard({ adventure }) {
                        <p> {Eco_Friendly_Features[1]}</p>
                        </div>
                      </div>
-                    <button className=" btn btn-primary transition-all duration-300 hover:scale-105 hover:shadow-lg">Explore Now</button>
+                    <Link to={`/adventure_detail/${ID}`} className=" btn btn-primary transition-all duration-300 hover:scale-105 hover:shadow-lg">Explore Now</Link>
                 </div>
             </div>
         </div>

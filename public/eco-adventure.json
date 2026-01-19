@@ -9,8 +9,8 @@
     "Booking_Availability": "Online via Bangladesh Forest Department Sundarbans portal / local tour operators",
     "Location": "Sundarbans, Khulna & Bagerhat Districts, Bangladesh",
     "Duration": "1–3 days",
-    "Adventure Level": "Medium",
-    "Included Items": [
+    "Adventure_Level": "Medium",
+    "Included_Items": [
       "Boat ride",
       "Guide",
       "Safety gear (life jackets)",
@@ -22,7 +22,7 @@
       "Low-impact boat tours"
     ],
     "Max_Group_Size": "≈ 20–30 per boat",
-    "Special Instructions": [
+    "Special_Instructions": [
       "Carry valid ID for forest permit",
       "Respect wildlife and stay with guide",
       "Bring sun protection"
@@ -38,8 +38,8 @@
     "Booking_Availability": "Local booking via Sylhet tour operators",
     "Location": "Gowainghat, Sylhet District, Bangladesh",
     "Duration": "Half-day to full-day",
-    "Adventure Level": "Easy to Medium",
-    "Included Items": [
+    "Adventure_Level": "Easy to Medium",
+    "Included_Items": [
       "Local boat ride",
       "Guide",
       "Forest entry"
