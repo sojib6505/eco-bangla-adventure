@@ -4,13 +4,10 @@ export default function WelcomeBanner() {
   return (
     <section
       className="relative bg-cover bg-center py-5 flex items-center justify-center"
-      style={{
-        backgroundImage:
-          "url('https://images.unsplash.com/photo-1564608191520-4c29e7e6f2a1?auto=format&fit=crop&w=1950&q=80')",
-      }}
+     
     >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-secondary"></div>
+      <div className="absolute inset-0 bg-secondary shadow-sm"></div>
 
       {/* Content Container */}
       <div className="relative max-w-7xl w-full px-4 sm:px-6 lg:px-20 flex flex-col lg:flex-row items-center gap-10">
