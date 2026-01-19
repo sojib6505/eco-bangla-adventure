@@ -19,7 +19,7 @@ export default function WelcomeBanner() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
         >
-          <h2 className="text-2xl sm:text-3xl font-semibold mb-2">
+          <h2 className="text-2xl text-primary sm:text-3xl font-semibold mb-2">
             Welcome to EcoBangla Adventure
           </h2>
 
