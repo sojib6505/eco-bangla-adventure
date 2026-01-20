@@ -1,9 +1,11 @@
 import { NavLink } from "react-router";
-import { useState } from "react";
+import { use, useState } from "react";
 import logo from "../assets/logo.png";
+import { Context } from "../Context/Context";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const {firebaseLoading,user} = use(Context)
 
   return (
     <nav className="bg-primary px-4 md:px-10">
@@ -12,7 +14,7 @@ export default function Navbar() {
         <div className="hidden md:flex gap-10 font-bold text-white">
           <NavLink to="/">Home</NavLink>
           <a href="#adventures">Adventures</a>
-          <NavLink to="/sign_in">Login</NavLink>
+          {firebaseLoading?(<p>loading--------</p>):user?(<NavLink  to="/profile">Profile</NavLink>):<NavLink  to="/sign_in">Login</NavLink>}
         </div>
         {/* Mobile Menu Button */}
         <button
@@ -27,7 +29,8 @@ export default function Navbar() {
         <div className="md:hidden flex flex-col gap-4 pb-4 font-bold text-white">
           <NavLink  to="/">Home</NavLink>
           <a href="#adventures">Adventures</a>
-          <NavLink  to="/sign_in">Login</NavLink>
+          {firebaseLoading?(<p>loading--------</p>):user?(<NavLink  to="/profile">Profile</NavLink>):<NavLink  to="/sign_in">Login</NavLink>}
+          
         </div>
       )}
     </nav>

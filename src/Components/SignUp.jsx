@@ -4,11 +4,12 @@ import logo from "../assets/logo.png"
 import { use, useState } from "react";
 import { Context } from "../Context/Context";
 import Swal from "sweetalert2";
+import { FaEye,FaEyeSlash } from "react-icons/fa";
 
 export default function SignUp() {
   const [error, setError] = useState("")
   const { signUp } = use(Context)
-
+  const [showPass,setShowPass] = useState(false)
   const handleSignUp = e => {
     e.preventDefault()
     const password = e.target.password.value;
@@ -27,7 +28,7 @@ export default function SignUp() {
           Swal.fire({
             position: "top-end",
             icon: "success",
-            title: "Your work has been saved",
+            title: "SignUp Successfully",
             showConfirmButton: false,
             timer: 1500
           });
@@ -55,9 +56,17 @@ export default function SignUp() {
           <label className="label">Photo URL</label>
           <input name="photo" type="text" className="input" placeholder="Photo URL" />
           <label className="label">Password</label>
-          <input name="password" type="password" className="input" placeholder="Password" required />
+          <div className="relative">
+            <input name="password" type={!showPass?'password':'text'} className="input" placeholder="Password" required />
+            <button type="button" onClick={()=>setShowPass(!showPass)}>
+               {showPass ?
+             <FaEye size={15} className="absolute top-3 right-4"></FaEye>:
+             <FaEyeSlash size={15} className="absolute top-3 right-4"></FaEyeSlash>
+            }
+            </button>
+          </div>
           {error && <p className="text-red-500">{error}</p>}
-          <button type="submit" className="btn btn-primary mt-4">Login</button>
+          <button type="submit" className="btn btn-primary mt-4">SignUp</button>
           <p>Already have an account? <Link to='/sign_in' className="font-bold hover:underline">Login</Link></p>
         </fieldset>
       </form>

@@ -10,6 +10,7 @@ import AdventureDetail from './Pages/AdventureDetail.jsx'
 import ExpertMeet from './Pages/ExpertMeet.jsx'
 import SignIn from './Components/SignIn.jsx'
 import SignUp from './Components/SignUp.jsx'
+import UserProfile from './Components/UserProfile.jsx'
 
 const router = createBrowserRouter([
   {path:'/',Component: Home,
@@ -28,7 +29,8 @@ const router = createBrowserRouter([
     element: <ExpertMeet />
   },
   {path:'sign_in',Component: SignIn},
-  {path:'sign_up',Component: SignUp}
+  {path:'sign_up',Component: SignUp},
+  {path:'profile',Component: UserProfile}
 ])
 
 createRoot(document.getElementById('root')).render(

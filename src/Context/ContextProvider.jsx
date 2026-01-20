@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react"
 import { Context } from "./Context"
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase/firebase.init";
 
 export default function ContextProvider({ children }) {
     const [adventure, setAdventure] = useState([]);
     const [loading,setLoading] = useState(true)
+     const [firebaseLoading,setFirebaseLoading] = useState(true)
+    const [user,setUser] = useState(null)
     useEffect(() => {
         fetch('/eco-adventure.json')
             .then(res => res.json())
@@ -21,18 +23,34 @@ export default function ContextProvider({ children }) {
                 
             )
     }, [])
+
+    // firebase Observer
+    useEffect(()=>{
+        const unSubscribe = onAuthStateChanged(auth,(currentUser)=>{
+          setUser(currentUser)
+          setFirebaseLoading(false)
+        })
+        return ()=>unSubscribe()
+    },[])
     // Registration in firebase
     const signUp = (email,password) => {
        return createUserWithEmailAndPassword(auth,email,password)
     }
+    const signIn = (email,password) =>{
+        return signInWithEmailAndPassword(auth,email,password)
+    }
+    
     const contextValue = {
         adventure,
         loading,
-        signUp
+        signUp,
+        signIn,
+        firebaseLoading,
+        user
     }
     return (
-        <Context value={contextValue}>
+        <Context.Provider value={contextValue}>
             {children}
-        </Context>
+        </Context.Provider>
     )
 }
