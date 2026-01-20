@@ -1,6 +1,5 @@
 import { div } from "framer-motion/client";
 import Navbar from "../Components/Navbar";
-
 export default function ExpertMeet() {
   return (
     <div>
@@ -10,9 +9,7 @@ export default function ExpertMeet() {
         <h2 className="text-3xl font-bold text-primary">
           Talk With Our Expert
         </h2>
-
         <p>Click below to join Google Meet</p>
-
         <a
           href="https://meet.google.com/"
           target="_blank"

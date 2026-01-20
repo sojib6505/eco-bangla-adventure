@@ -9,9 +9,7 @@ export default function AdventureDetail() {
   const id = useLoaderData();
   const navigate = useNavigate();
   const adventureObj = adventure.find(item => item.ID === id);
-
   const [showModal, setShowModal] = useState(false);
-
   const handleTalkWithExpert = () => {
     const hour = new Date().getHours();
 
@@ -25,7 +23,6 @@ export default function AdventureDetail() {
   return (
     <>
       <Navbar />
-
       {loading ? (
         <div className="w-full py-20 flex justify-center">
           <h2 className="text-xl font-semibold">Loading adventures...</h2>
@@ -36,7 +33,6 @@ export default function AdventureDetail() {
           <h1 className="text-xl md:text-4xl font-bold text-primary text-center">
             {adventureObj?.Adventure_Title}
           </h1>
-
           {/* Main Image */}
           <div className="w-full rounded-lg overflow-hidden shadow-lg">
             <img
@@ -45,7 +41,6 @@ export default function AdventureDetail() {
               className="w-full h-full object-cover"
             />
           </div>
-
           {/* Basic Info */}
           <div className="grid md:grid-cols-2 gap-6 text-gray-700">
             <div className="flex items-center gap-2">
@@ -65,56 +60,48 @@ export default function AdventureDetail() {
               <span className="font-semibold">Cost:</span> {adventureObj?.Adventure_Cost}
             </div>
           </div>
-
           {/* Description */}
           <div>
-            <h2 className="text-2xl font-bold mb-2">Description</h2>
+            <h2 className="text-xl font-bold mb-2">Description</h2>
             <p>{adventureObj?.Short_Description}</p>
           </div>
-
           {/* Category */}
           <div>
-            <h2 className="text-2xl font-bold mb-2">Category</h2>
+            <h2 className="text-xl font-bold mb-2">Category</h2>
             <p>{adventureObj?.Category_Name}</p>
           </div>
-
           {/* Adventure Level */}
           <div>
-            <h2 className="text-2xl font-bold mb-2">Adventure Level</h2>
+            <h2 className="text-xl font-bold mb-2">Adventure Level</h2>
             <p>{adventureObj?.Adventure_Level}</p>
           </div>
-
           {/* Included Items */}
           <div>
-            <h2 className="text-2xl font-bold mb-2">Included Items</h2>
+            <h2 className="text-xl font-bold mb-2">Included Items</h2>
             <ul className="list-disc list-inside">
               {adventureObj?.Included_Items?.map((item, index) => (
                 <li key={index}>{item}</li>
               ))}
             </ul>
           </div>
-
           {/* Eco-Friendly Features */}
           <div>
-            <h2 className="text-2xl font-bold mb-2">Eco-Friendly Features</h2>
+            <h2 className="text-xl font-bold mb-2">Eco-Friendly Features</h2>
             <ul className="list-disc list-inside">
               {adventureObj?.Eco_Friendly_Features?.map((item, index) => (
                 <li key={index}>{item}</li>
               ))}
             </ul>
           </div>
-
           {/* Special Instructions */}
           <div>
-            <h2 className="text-2xl font-bold mb-2">Special Instructions</h2>
+            <h2 className="text-xl font-bold mb-2">Special Instructions</h2>
             <ul className="list-disc list-inside">
               {adventureObj?.Special_Instructions?.map((item, index) => (
                 <li key={index}>{item}</li>
               ))}
             </ul>
           </div>
-
-          {/* Talk With Expert Button */}
           <button
             onClick={handleTalkWithExpert}
             className="btn btn-primary"

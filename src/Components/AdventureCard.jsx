@@ -29,8 +29,6 @@ export default function AdventureCard({ adventure }) {
                         <MdOutlineFeaturedPlayList size={20}></MdOutlineFeaturedPlayList>
                        <p> {Eco_Friendly_Features[0]}</p>
                        </div>
-                   
-                     
                         <div className="flex gap-2 items-center">
                         <MdOutlineFeaturedPlayList size={20}></MdOutlineFeaturedPlayList>
                        <p> {Eco_Friendly_Features[1]}</p>

@@ -4,8 +4,6 @@ import Banner from "../Components/Banner";
 import Navbar from "../Components/Navbar";
 import WelcomeBanner from "../Components/WelcomeBanner";
 import Footer from "../Components/Footer";
-
-
 export default function Home() {
   return (
     <div >

@@ -8,6 +8,8 @@ import Adventure from './Components/Adventure.jsx'
 import ContextProvider from './Context/ContextProvider.jsx'
 import AdventureDetail from './Pages/AdventureDetail.jsx'
 import ExpertMeet from './Pages/ExpertMeet.jsx'
+import SignIn from './Components/SignIn.jsx'
+import SignUp from './Components/SignUp.jsx'
 
 const router = createBrowserRouter([
   {path:'/',Component: Home,
@@ -24,7 +26,9 @@ const router = createBrowserRouter([
      {
     path: "/expert-meet",
     element: <ExpertMeet />
-  }
+  },
+  {path:'sign_in',Component: SignIn},
+  {path:'sign_up',Component: SignUp}
 ])
 
 createRoot(document.getElementById('root')).render(

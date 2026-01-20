@@ -1,7 +1,6 @@
 import logo from '../assets/logo.png'
 import { BsInstagram } from "react-icons/bs";
 import { FaLinkedin,FaGithub} from "react-icons/fa";
-
 export default function Footer() {
     return (
         <footer className="footer sm:footer-horizontal bg-primary text-neutral-content p-10">

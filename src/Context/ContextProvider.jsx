@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
 import { Context } from "./Context"
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase/firebase.init";
 
 export default function ContextProvider({ children }) {
     const [adventure, setAdventure] = useState([]);
@@ -19,12 +21,15 @@ export default function ContextProvider({ children }) {
                 
             )
     }, [])
+    // Registration in firebase
+    const signUp = (email,password) => {
+       return createUserWithEmailAndPassword(auth,email,password)
+    }
     const contextValue = {
         adventure,
-        loading
+        loading,
+        signUp
     }
-
-
     return (
         <Context value={contextValue}>
             {children}

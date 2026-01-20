@@ -22,14 +22,12 @@ export default function WelcomeBanner() {
           <h2 className="text-2xl text-primary sm:text-3xl font-semibold mb-2">
             Welcome to EcoBangla Adventure
           </h2>
-
           <p className="text-base sm:text-lg lg:text-xl leading-relaxed mb-4">
             A land where untouched beauty meets timeless history. Explore vibrant cultures, warm-hearted people, and breathtaking landscapes. 
             From the mysterious Sundarbans to the world’s longest unbroken sea beach, rolling hills, serene tea plantations, and floating markets, every corner tells a story.
             <br />
             Step into Bangladesh, feel her warmth, embrace her wonders, and create your own map of discovery.
           </p>
-
           <motion.a href="#adventures"
             className="btn btn-primary transition-all duration-300 hover:scale-105 hover:shadow-lg"
             whileHover={{ scale: 1.05 }}
@@ -37,7 +35,6 @@ export default function WelcomeBanner() {
             Explore Adventures
           </motion.a>
         </motion.div>
-
         {/* Right Side: YouTube Video */}
         <motion.div
           className="flex-1 w-full lg:w-125 h-55 sm:h-70 md:h-85 lg:h-105"

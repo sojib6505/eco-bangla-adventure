@@ -8,18 +8,12 @@ export default function Navbar() {
   return (
     <nav className="bg-primary px-4 md:px-10">
       <div className="flex justify-between items-center h-16">
-
-        {/* Logo */}
         <img src={logo} alt="Logo" className="w-28" />
-
-        {/* Desktop Menu */}
         <div className="hidden md:flex gap-10 font-bold text-white">
           <NavLink to="/">Home</NavLink>
           <a href="#adventures">Adventures</a>
-          {/* <NavLink to="/eco">Eco Tourism</NavLink> */}
-          <NavLink to="/login">Login</NavLink>
+          <NavLink to="/sign_in">Login</NavLink>
         </div>
-
         {/* Mobile Menu Button */}
         <button
           className="md:hidden text-white text-2xl"
@@ -28,14 +22,12 @@ export default function Navbar() {
           ☰
         </button>
       </div>
-
       {/* Mobile Menu */}
       {open && (
         <div className="md:hidden flex flex-col gap-4 pb-4 font-bold text-white">
           <NavLink  to="/">Home</NavLink>
           <a href="#adventures">Adventures</a>
-          {/* <NavLink  to="/eco">Eco Tourism</NavLink> */}
-          <NavLink  to="/login">Login</NavLink>
+          <NavLink  to="/sign_in">Login</NavLink>
         </div>
       )}
     </nav>
