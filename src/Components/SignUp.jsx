@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import Navbar from "./Navbar";
 import logo from "../assets/logo.png"
 import { use, useState } from "react";
@@ -10,6 +10,7 @@ export default function SignUp() {
   const [error, setError] = useState("")
   const { signUp } = use(Context)
   const [showPass,setShowPass] = useState(false)
+  const navigate = useNavigate()
   const handleSignUp = e => {
     e.preventDefault()
     const password = e.target.password.value;
@@ -26,12 +27,13 @@ export default function SignUp() {
           console.log(userCredential.user)
 
           Swal.fire({
-            position: "top-end",
+            position: "center",
             icon: "success",
             title: "SignUp Successfully",
             showConfirmButton: false,
             timer: 1500
           });
+          navigate('/')
         })
         .catch((error) => {
           setError(error.message)

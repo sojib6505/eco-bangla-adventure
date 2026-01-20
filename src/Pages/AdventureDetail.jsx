@@ -3,6 +3,9 @@ import { useLoaderData, useNavigate } from "react-router";
 import Navbar from "../Components/Navbar";
 import { Context } from "../Context/Context";
 import { FaClock, FaDollarSign, FaMapMarkerAlt, FaUsers } from "react-icons/fa";
+import ScrollToTop from "../Components/ScrollToTop";
+import Loader from "../Components/Loader";
+import { div } from "framer-motion/client";
 
 export default function AdventureDetail() {
   const { adventure, loading } = useContext(Context);
@@ -10,6 +13,7 @@ export default function AdventureDetail() {
   const navigate = useNavigate();
   const adventureObj = adventure.find(item => item.ID === id);
   const [showModal, setShowModal] = useState(false);
+  
   const handleTalkWithExpert = () => {
     const hour = new Date().getHours();
 
@@ -22,11 +26,12 @@ export default function AdventureDetail() {
 
   return (
     <>
+      <ScrollToTop/>
       <Navbar />
       {loading ? (
-        <div className="w-full py-20 flex justify-center">
-          <h2 className="text-xl font-semibold">Loading adventures...</h2>
-        </div>
+      <div className="flex justify-center min-h-screen items-center">
+         <Loader/>
+      </div>
       ) : (
         <div className="max-w-5xl mx-auto px-4 py-10 space-y-6">
           {/* Title */}

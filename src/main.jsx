@@ -11,6 +11,7 @@ import ExpertMeet from './Pages/ExpertMeet.jsx'
 import SignIn from './Components/SignIn.jsx'
 import SignUp from './Components/SignUp.jsx'
 import UserProfile from './Components/UserProfile.jsx'
+import PrivateRoute from './PrivateRoute/PrivateRoute.jsx'
 
 const router = createBrowserRouter([
   {path:'/',Component: Home,
@@ -23,7 +24,7 @@ const router = createBrowserRouter([
     loader:({params}) => {
       return params.id
     },
-    Component:AdventureDetail},
+    element:<PrivateRoute><AdventureDetail></AdventureDetail></PrivateRoute>},
      {
     path: "/expert-meet",
     element: <ExpertMeet />

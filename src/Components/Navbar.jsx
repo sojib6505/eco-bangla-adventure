@@ -1,20 +1,22 @@
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 import { use, useState } from "react";
 import logo from "../assets/logo.png";
 import { Context } from "../Context/Context";
+import Loader from "./Loader";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const {firebaseLoading,user} = use(Context)
+  
 
   return (
     <nav className="bg-primary px-4 md:px-10">
       <div className="flex justify-between items-center h-16">
-        <img src={logo} alt="Logo" className="w-28" />
-        <div className="hidden md:flex gap-10 font-bold text-white">
+       <Link to='/'><img src={logo} alt="Logo" className="w-28" /></Link>
+        <div className="hidden md:flex gap-10 items-center font-bold text-white">
           <NavLink to="/">Home</NavLink>
           <a href="#adventures">Adventures</a>
-          {firebaseLoading?(<p>loading--------</p>):user?(<NavLink  to="/profile">Profile</NavLink>):<NavLink  to="/sign_in">Login</NavLink>}
+          {firebaseLoading?(<Loader/>):user?(<NavLink  to="/profile"><img className="w-12 rounded-full" src={user?.photoURL || 'https://i.ibb.co.com/vCzVBYTz/images.png'} alt="" /></NavLink>):<NavLink  to="/sign_in">Login</NavLink>}
         </div>
         {/* Mobile Menu Button */}
         <button
