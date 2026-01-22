@@ -1,18 +1,20 @@
 import { Link, useNavigate } from "react-router";
-import Navbar from "./Navbar";
+import Navbar from "../Components/Navbar";
 import logo from "../assets/logo.png"
 import { use, useState } from "react";
 import { Context } from "../Context/Context";
 import Swal from "sweetalert2";
-import { FaEye,FaEyeSlash } from "react-icons/fa";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 export default function SignUp() {
   const [error, setError] = useState("")
-  const { signUp } = use(Context)
-  const [showPass,setShowPass] = useState(false)
+  const { signUp, userUpdate } = use(Context)
+  const [showPass, setShowPass] = useState(false)
   const navigate = useNavigate()
   const handleSignUp = e => {
     e.preventDefault()
+    const name = e.target.name.value;
+    const photo = e.target.photo.value;
     const password = e.target.password.value;
     const email = e.target.email.value
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
@@ -25,15 +27,21 @@ export default function SignUp() {
       signUp(email, password)
         .then((userCredential) => {
           console.log(userCredential.user)
+          userUpdate(userCredential.user, name, photo )
+            .then(() => {
+              Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "SignUp Successfully",
+                showConfirmButton: false,
+                timer: 1500
+              });
+              navigate('/')
+            })
+            .catch((error) => {
+              setError(error.message)
+            })
 
-          Swal.fire({
-            position: "center",
-            icon: "success",
-            title: "SignUp Successfully",
-            showConfirmButton: false,
-            timer: 1500
-          });
-          navigate('/')
         })
         .catch((error) => {
           setError(error.message)
@@ -59,12 +67,12 @@ export default function SignUp() {
           <input name="photo" type="text" className="input" placeholder="Photo URL" />
           <label className="label">Password</label>
           <div className="relative">
-            <input name="password" type={!showPass?'password':'text'} className="input" placeholder="Password" required />
-            <button type="button" onClick={()=>setShowPass(!showPass)}>
-               {showPass ?
-             <FaEye size={15} className="absolute top-3 right-4"></FaEye>:
-             <FaEyeSlash size={15} className="absolute top-3 right-4"></FaEyeSlash>
-            }
+            <input name="password" type={!showPass ? 'password' : 'text'} className="input" placeholder="Password" required />
+            <button type="button" onClick={() => setShowPass(!showPass)}>
+              {showPass ?
+                <FaEye size={15} className="absolute top-3 right-4"></FaEye> :
+                <FaEyeSlash size={15} className="absolute top-3 right-4"></FaEyeSlash>
+              }
             </button>
           </div>
           {error && <p className="text-red-500">{error}</p>}

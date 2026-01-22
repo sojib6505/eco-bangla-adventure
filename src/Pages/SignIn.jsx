@@ -1,5 +1,5 @@
 import { Link, replace, useLocation, useNavigate, } from "react-router";
-import Navbar from "./Navbar";
+import Navbar from "../Components/Navbar";
 import { use, useState } from "react";
 import { Context } from "../Context/Context";
 import { FaEye, FaEyeSlash } from "react-icons/fa";

@@ -8,10 +8,10 @@ import Adventure from './Components/Adventure.jsx'
 import ContextProvider from './Context/ContextProvider.jsx'
 import AdventureDetail from './Pages/AdventureDetail.jsx'
 import ExpertMeet from './Pages/ExpertMeet.jsx'
-import SignIn from './Components/SignIn.jsx'
-import SignUp from './Components/SignUp.jsx'
-import UserProfile from './Components/UserProfile.jsx'
+import SignUp from './Pages/SignUp.jsx'
 import PrivateRoute from './PrivateRoute/PrivateRoute.jsx'
+import SignIn from './Pages/SignIn.jsx'
+import UserProfile from './Pages/UserProfile.jsx'
 
 const router = createBrowserRouter([
   {path:'/',Component: Home,

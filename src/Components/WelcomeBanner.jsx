@@ -37,16 +37,16 @@ export default function WelcomeBanner() {
         </motion.div>
         {/* Right Side: YouTube Video */}
         <motion.div
-          className="flex-1 w-full lg:w-125 h-55 sm:h-70 md:h-85 lg:h-105"
+          className="flex-1 w-full lg:w-125 h-100 sm:h-70 md:h-85 lg:h-105"
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
         >
           <iframe
-            className="w-full h-full rounded-2xl shadow-xl"
+            className="w-full h-full  rounded-2xl shadow-xl"
             src="https://www.youtube.com/embed/urTp2z0Rm1Y?si=rrqfYLXpx2KX9B2K"
             title="YouTube video player"
-            frameBorder="0"
+            // frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
           ></iframe>

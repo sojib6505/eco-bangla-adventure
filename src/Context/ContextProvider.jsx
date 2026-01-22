@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { Context } from "./Context"
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { auth } from "../firebase/firebase.init";
 
 export default function ContextProvider({ children }) {
@@ -45,6 +45,13 @@ export default function ContextProvider({ children }) {
     const signInWithGoogle =(provider) =>{
         return signInWithPopup(auth,provider)
     }
+    const userUpdate = (userObj ,displayName,photoURL) => {
+        if(!userObj) throw new Error("No user to update")
+        return updateProfile(userObj,{
+            displayName,
+            photoURL
+        })
+    }
     const contextValue = {
         adventure,
         loading,
@@ -53,7 +60,8 @@ export default function ContextProvider({ children }) {
         firebaseLoading,
         user,
         signOutUser,
-        signInWithGoogle
+        signInWithGoogle,
+        userUpdate
     }
     return (
         <Context.Provider value={contextValue}>
