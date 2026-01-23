@@ -57,8 +57,6 @@ The app uses structured JSON data for adventures including:
 
 
 
-
-
 ## Tech Stack
 
 - **Frontend**: React.js, Tailwind CSS, Daisy UI

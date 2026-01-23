@@ -4,24 +4,27 @@ import { use, useState } from "react";
 import { Context } from "../Context/Context";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { GoogleAuthProvider } from "firebase/auth";
+import Swal from "sweetalert2";
 
 export default function SignIn() {
-  const { signIn,signInWithGoogle } = use(Context)
+  const { signIn, signInWithGoogle, resetPassword } = use(Context)
   const navigate = useNavigate()
   const [showPass, setShowPass] = useState(false)
-  const [error,setError] = useState("")
+  const [error, setError] = useState("")
   const provider = new GoogleAuthProvider()
   const location = useLocation()
   const from = location.state?.from?.pathname || '/'
   const handleLogin = e => {
+       setError("")
     e.preventDefault();
+ 
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
     signIn(email, password)
       .then((result) => {
         console.log(result)
-        navigate(from,{replace:true})
+        navigate(from, { replace: true })
       })
       .catch((error) => {
         console.log(error)
@@ -36,13 +39,32 @@ export default function SignIn() {
         const token = credential.accessToken;
         const user = result.user;
         console.log(user)
-        navigate(from,{replace:true})
+        navigate(from, { replace: true })
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-         setError(setError)
+        setError(errorMessage)
       })
+  }
+  const handleResetPassword = e => {
+       setError("")
+    e.preventDefault()
+    const email = document.querySelector("input[name='email']").value;
+    resetPassword(email)
+      .then(() => {
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Password reset email sent",
+          showConfirmButton: false,
+          timer: 1500
+        });
+      })
+      .catch((error) => {
+        setError(error.message)
+      })
+    //  console.log(email)
   }
   return (
     <div>
@@ -64,7 +86,7 @@ export default function SignIn() {
               }
             </button>
           </div>
-          <p className="hover:underline cursor-pointer">Forget Password</p>
+          <p onClick={handleResetPassword} className="hover:underline cursor-pointer">Forget Password</p>
           {error && <p className="text-red-500">{error}</p>}
           <button type="submit" className="btn btn-primary mt-4">Login</button>
           <p>Don't have an account? <Link to='/sign_up' className="font-bold hover:underline">SignUp</Link></p>

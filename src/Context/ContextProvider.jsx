@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { Context } from "./Context"
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { auth } from "../firebase/firebase.init";
 
 export default function ContextProvider({ children }) {
@@ -52,6 +52,9 @@ export default function ContextProvider({ children }) {
             photoURL
         })
     }
+    const resetPassword = (email) =>{
+        return sendPasswordResetEmail(auth,email)
+    }
     const contextValue = {
         adventure,
         loading,
@@ -61,7 +64,8 @@ export default function ContextProvider({ children }) {
         user,
         signOutUser,
         signInWithGoogle,
-        userUpdate
+        userUpdate,
+        resetPassword
     }
     return (
         <Context.Provider value={contextValue}>
