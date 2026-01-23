@@ -64,15 +64,11 @@ The app uses structured JSON data for adventures including:
 - **Frontend**: React.js, Tailwind CSS, Daisy UI
 - **Authentication & Database**: Firebase Auth, Firebase Firestore
 - **Routing**: React Router
-- **Animation**: AOS / Animate.css
-- **Hosting**: Netlify / Firebase Hosting
+- **Animation**: framer-motion/ Animate.css
+- **Hosting**:  Firebase Hosting
 - **Version Control**: GitHub
 
----
 
-## Installation & Setup
 
-1. **Clone the repository**
-```bash
-git clone https://github.com/yourusername/eco-adventure-experiences.git
-cd eco-adventure-experiences
+
+

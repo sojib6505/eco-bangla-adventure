@@ -15,7 +15,7 @@ export default function Navbar() {
         <Link to='/'><img src={logo} alt="Logo" className="w-28" /></Link>
         <div className="hidden md:flex gap-10 items-center font-bold text-white">
           <NavLink to="/">Home</NavLink>
-          <a href='#adventures'>Adventures</a>
+          <Link to='/#adventures'>Adventures</Link>
           {firebaseLoading ? (<Loader />) : user ? (<NavLink to="/profile"><img className="w-12 h-12 rounded-full" src={user?.photoURL || 'https://i.ibb.co.com/vCzVBYTz/images.png'} alt="" /></NavLink>) : <NavLink to="/sign_in">Login</NavLink>}
         </div>
         {/* Mobile Menu Button */}
@@ -23,7 +23,7 @@ export default function Navbar() {
           className="md:hidden text-white text-2xl"
           onClick={() => setOpen(!open)}
         >
-          ☰
+        {open ? '✖' : '☰'}
         </button>
       </div>
       {/* Mobile Menu */}
